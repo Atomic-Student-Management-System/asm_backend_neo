@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "asm-backend-neo"
+version = "0.0.1"
+description = "适用于AtomicStudentManager的新版后端服务"
+authors = ["XYCode Kerman <xycode-xyc@outlook.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.110.0"
+uvicorn = "^0.27.1"
+python-dotenv = "^1.0.1"
+rich = "^13.7.1"
+aiohttp = "^3.9.3"
+motor = "^3.3.2"
+pyotp = "^2.9.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
