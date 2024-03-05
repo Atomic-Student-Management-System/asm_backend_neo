@@ -1,3 +1,5 @@
+from typing import Union
+
 import fastapi
 
 from routers import auth
