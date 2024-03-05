@@ -19,7 +19,7 @@ from utils import db, otp_verify
 router = fastapi.APIRouter(prefix='/totp')
 
 
-@router.get('/bind', response_class=FileResponse, name='绑定 TOTP 密钥')
+@router.get('/bind', response_class=FileResponse, name='绑定 TOTP 密钥', tags=['验证', 'TOTP'])
 async def handle_totp_bind(admin_password: str):
     if admin_password != config.ADMIN_PASSWORD:
         raise HTTPException(
@@ -62,7 +62,7 @@ class HandleVerifyResponse(pydantic.BaseModel):
     message: Literal['验证成功', '验证失败']
 
 
-@router.get('/verify', response_model=HandleVerifyResponse, name='验证 TOTP 数字')
+@router.get('/verify', response_model=HandleVerifyResponse, name='验证 TOTP 数字', tags=['验证', 'TOTP'])
 async def handle_verify(otp: str):
     if await otp_verify(otp):
         return {
