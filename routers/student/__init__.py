@@ -17,7 +17,7 @@ async def handle_get_students():
     return await students.to_list(None)
 
 
-@router.get('/{name}', response_model=float, name='获取操行分', tags=['学生'])
+@router.get('/student_{name}', response_model=float, name='获取操行分', tags=['学生'])
 async def handle_get_student_integral(name: str):
     student = await db['students'].find_one({'name': name})
     if student is None:
@@ -49,7 +49,13 @@ async def handle_get_integral_update_records():
     return await records.to_list(None)
 
 
-@router.post('/integral_update_records', response_model=StudentIntegralUpdate, name='创建积分更新记录', tags=['学生'])
+@router.get('/integral_update_records_{name}', response_model=List[StudentIntegralUpdate], name='获取积分更新记录', tags=['学生'])
+async def handle_get_integral_update_records(name: str):
+    records = db['integral'].find({'name': name})
+    return await records.to_list(None)
+
+
+@router.post('/add_integral_update_record', response_model=StudentIntegralUpdate, name='创建积分更新记录', tags=['学生'])
 async def handle_create_integral_update_record(record: StudentIntegralUpdate, user: User = Depends(verify)):
     if (await db['students'].find_one({'name': record.name})) is None:
         raise HTTPException(status_code=404, detail='学生不存在')

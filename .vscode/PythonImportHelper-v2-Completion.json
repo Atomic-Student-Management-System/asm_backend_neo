@@ -1,0 +1,286 @@
+[
+    {
+        "label": "Literal",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Literal",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "pydantic",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "io",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "io",
+        "description": "io",
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "tempfile",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tempfile",
+        "description": "tempfile",
+        "detail": "tempfile",
+        "documentation": {}
+    },
+    {
+        "label": "fastapi",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "pyotp",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyotp",
+        "description": "pyotp",
+        "detail": "pyotp",
+        "documentation": {}
+    },
+    {
+        "label": "qrcode",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "qrcode",
+        "description": "qrcode",
+        "detail": "qrcode",
+        "documentation": {}
+    },
+    {
+        "label": "FileResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "QRCode",
+        "importPath": "qrcode.main",
+        "description": "qrcode.main",
+        "isExtraImport": true,
+        "detail": "qrcode.main",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "config",
+        "description": "config",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "otp_verify",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "dotenv",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "CORSMiddleware",
+        "importPath": "fastapi.middleware.cors",
+        "description": "fastapi.middleware.cors",
+        "isExtraImport": true,
+        "detail": "fastapi.middleware.cors",
+        "documentation": {}
+    },
+    {
+        "label": "auth",
+        "importPath": "routers",
+        "description": "routers",
+        "isExtraImport": true,
+        "detail": "routers",
+        "documentation": {}
+    },
+    {
+        "label": "student",
+        "importPath": "routers",
+        "description": "routers",
+        "isExtraImport": true,
+        "detail": "routers",
+        "documentation": {}
+    },
+    {
+        "label": "Student",
+        "kind": 6,
+        "importPath": "models.student",
+        "description": "models.student",
+        "peekOfCode": "class Student(pydantic.BaseModel):\n    name: str\nclass StudentIntegralUpdate(pydantic.BaseModel):\n    name: str\n    type: Literal['add', 'remove']\n    score: float\n    time: float\n    reason: str",
+        "detail": "models.student",
+        "documentation": {}
+    },
+    {
+        "label": "StudentIntegralUpdate",
+        "kind": 6,
+        "importPath": "models.student",
+        "description": "models.student",
+        "peekOfCode": "class StudentIntegralUpdate(pydantic.BaseModel):\n    name: str\n    type: Literal['add', 'remove']\n    score: float\n    time: float\n    reason: str",
+        "detail": "models.student",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 6,
+        "importPath": "models.user",
+        "description": "models.user",
+        "peekOfCode": "class User(pydantic.BaseModel):\n    \"\"\"用户\"\"\"\n    time: int\n    sec: str\n    url: str",
+        "detail": "models.user",
+        "documentation": {}
+    },
+    {
+        "label": "HandleVerifyResponse",
+        "kind": 6,
+        "importPath": "routers.auth.totp",
+        "description": "routers.auth.totp",
+        "peekOfCode": "class HandleVerifyResponse(pydantic.BaseModel):\n    code: Literal[200, -2]\n    data: dict\n    message: Literal['验证成功', '验证失败']\n@router.get('/verify', response_model=HandleVerifyResponse, name='验证 TOTP 数字', tags=['验证', 'TOTP'])\nasync def handle_verify(otp: str):\n    if await otp_verify(otp):\n        return {\n            'code': 200,\n            'message': '验证成功',",
+        "detail": "routers.auth.totp",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "routers.auth.totp",
+        "description": "routers.auth.totp",
+        "peekOfCode": "router = fastapi.APIRouter(prefix='/totp')\n@router.get('/bind', response_class=FileResponse, name='绑定 TOTP 密钥', tags=['验证', 'TOTP'])\nasync def handle_totp_bind(admin_password: str):\n    if admin_password != config.ADMIN_PASSWORD:\n        raise HTTPException(\n            status_code=403,\n            detail='管理员密码错误'\n        )\n    sec = pyotp.random_base32()\n    otp = pyotp.TOTP(",
+        "detail": "routers.auth.totp",
+        "documentation": {}
+    },
+    {
+        "label": "MONGODB_URI",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "MONGODB_URI = os.environ['MONGODB_URI']\nDATABASE_NAME = os.environ['DATABASE_NAME']\nADMIN_PASSWORD = os.environ['ADMIN_PASSWORD']",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_NAME",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "DATABASE_NAME = os.environ['DATABASE_NAME']\nADMIN_PASSWORD = os.environ['ADMIN_PASSWORD']",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "ADMIN_PASSWORD",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "ADMIN_PASSWORD = os.environ['ADMIN_PASSWORD']",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "app = fastapi.FastAPI()\napp.include_router(auth.router)\napp.include_router(student.router)\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=['*'],\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)",
+        "detail": "main",
+        "documentation": {}
+    }
+]
