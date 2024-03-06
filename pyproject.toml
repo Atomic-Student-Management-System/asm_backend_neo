@@ -18,6 +18,11 @@ pyotp = "^2.9.0"
 qrcode = {extras = ["pil"], version = "^7.4.2"}
 
 
+[[tool.poetry.source]]
+name = "mirrors"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple/"
+priority = "default"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
