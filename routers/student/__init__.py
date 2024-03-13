@@ -5,7 +5,7 @@ import pydantic
 from fastapi import Depends, HTTPException, Response
 
 from models.student import Student, StudentIntegralUpdate
-from models.user import User
+from models.user import TotpSec
 from utils import db, verify
 
 router = fastapi.APIRouter(prefix='/student')
@@ -36,7 +36,7 @@ async def handle_get_student_integral(name: str):
 
 
 @router.post('/', response_model=Student, name='创建学生', tags=['学生'])
-async def handle_create_student(student: Student, user: User = Depends(verify)):
+async def handle_create_student(student: Student, user: TotpSec = Depends(verify)):
     inserted_id = (await db['students'].insert_one(student.model_dump())).inserted_id
     inserted_doc = await db['students'].find_one({'_id': inserted_id})
 
@@ -56,7 +56,7 @@ async def handle_get_integral_update_records(name: str):
 
 
 @router.post('/add_integral_update_record', response_model=StudentIntegralUpdate, name='创建积分更新记录', tags=['学生'])
-async def handle_create_integral_update_record(record: StudentIntegralUpdate, user: User = Depends(verify)):
+async def handle_create_integral_update_record(record: StudentIntegralUpdate, user: TotpSec = Depends(verify)):
     if (await db['students'].find_one({'name': record.name})) is None:
         raise HTTPException(status_code=404, detail='学生不存在')
 

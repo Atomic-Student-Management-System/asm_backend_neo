@@ -8,6 +8,14 @@
         "documentation": {}
     },
     {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Literal",
         "importPath": "typing",
         "description": "typing",
@@ -30,6 +38,114 @@
         "importPath": "pydantic",
         "description": "pydantic",
         "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "sha1",
+        "importPath": "hashlib",
+        "description": "hashlib",
+        "isExtraImport": true,
+        "detail": "hashlib",
+        "documentation": {}
+    },
+    {
+        "label": "fastapi",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "rsa",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "rsa",
+        "description": "rsa",
+        "detail": "rsa",
+        "documentation": {}
+    },
+    {
+        "label": "RSAKey",
+        "importPath": "models.user",
+        "description": "models.user",
+        "isExtraImport": true,
+        "detail": "models.user",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "rsa_verify",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "otp_verify",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
         "documentation": {}
     },
     {
@@ -66,31 +182,6 @@
         "importPath": "tempfile",
         "description": "tempfile",
         "detail": "tempfile",
-        "documentation": {}
-    },
-    {
-        "label": "fastapi",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "HTTPException",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "Response",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
         "documentation": {}
     },
     {
@@ -142,22 +233,6 @@
         "importPath": "config",
         "description": "config",
         "detail": "config",
-        "documentation": {}
-    },
-    {
-        "label": "db",
-        "importPath": "utils",
-        "description": "utils",
-        "isExtraImport": true,
-        "detail": "utils",
-        "documentation": {}
-    },
-    {
-        "label": "otp_verify",
-        "importPath": "utils",
-        "description": "utils",
-        "isExtraImport": true,
-        "detail": "utils",
         "documentation": {}
     },
     {
@@ -221,12 +296,30 @@
         "documentation": {}
     },
     {
-        "label": "User",
+        "label": "TotpSec",
         "kind": 6,
         "importPath": "models.user",
         "description": "models.user",
-        "peekOfCode": "class User(pydantic.BaseModel):\n    \"\"\"用户\"\"\"\n    time: int\n    sec: str\n    url: str",
+        "peekOfCode": "class TotpSec(pydantic.BaseModel):\n    \"\"\"Totp密钥\"\"\"\n    time: int\n    sec: str\n    url: str\nclass RSAKey(pydantic.BaseModel):\n    \"\"\"RSA密钥\"\"\"\n    time: Optional[int] = None\n    pubkey: str\n    pubkey_sha1: str",
         "detail": "models.user",
+        "documentation": {}
+    },
+    {
+        "label": "RSAKey",
+        "kind": 6,
+        "importPath": "models.user",
+        "description": "models.user",
+        "peekOfCode": "class RSAKey(pydantic.BaseModel):\n    \"\"\"RSA密钥\"\"\"\n    time: Optional[int] = None\n    pubkey: str\n    pubkey_sha1: str",
+        "detail": "models.user",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "routers.auth.rsa_auth",
+        "description": "routers.auth.rsa_auth",
+        "peekOfCode": "router = fastapi.APIRouter(prefix='/rsa')\n@router.post('/submit_pubkey', tags=['验证', 'RSA'], response_model=RSAKey, name='新增RSA公钥', description='传入的 time 参数无效')\nasync def handle_submit_pubkey(pubkey: RSAKey):\n    rsakey = RSAKey(time=int(time.time()), pubkey=pubkey.pubkey,\n                    pubkey_sha1=pubkey.pubkey_sha1)\n    insert_result = await db['rsa'].insert_one(rsakey.model_dump())\n    data = await db['rsa'].find_one({'_id': insert_result.inserted_id})\n    return data\n@router.get('/verify_apikey', tags=['验证', 'RSA'], response_model=RSAKey, name='验证RSA签名的Apikey')\nasync def handle_verify_apikey(apikey: str):",
+        "detail": "routers.auth.rsa_auth",
         "documentation": {}
     },
     {
@@ -252,7 +345,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "MONGODB_URI = os.environ['MONGODB_URI']\nDATABASE_NAME = os.environ['DATABASE_NAME']\nADMIN_PASSWORD = os.environ['ADMIN_PASSWORD']",
+        "peekOfCode": "MONGODB_URI = os.environ['MONGODB_URI']\nDATABASE_NAME = os.environ['DATABASE_NAME']\nADMIN_PASSWORD = os.environ['ADMIN_PASSWORD']\nAPIKEY_EXPIRY = datetime.timedelta(minutes=1)",
         "detail": "config",
         "documentation": {}
     },
@@ -261,7 +354,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "DATABASE_NAME = os.environ['DATABASE_NAME']\nADMIN_PASSWORD = os.environ['ADMIN_PASSWORD']",
+        "peekOfCode": "DATABASE_NAME = os.environ['DATABASE_NAME']\nADMIN_PASSWORD = os.environ['ADMIN_PASSWORD']\nAPIKEY_EXPIRY = datetime.timedelta(minutes=1)",
         "detail": "config",
         "documentation": {}
     },
@@ -270,7 +363,16 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "ADMIN_PASSWORD = os.environ['ADMIN_PASSWORD']",
+        "peekOfCode": "ADMIN_PASSWORD = os.environ['ADMIN_PASSWORD']\nAPIKEY_EXPIRY = datetime.timedelta(minutes=1)",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "APIKEY_EXPIRY",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "APIKEY_EXPIRY = datetime.timedelta(minutes=1)",
         "detail": "config",
         "documentation": {}
     },
